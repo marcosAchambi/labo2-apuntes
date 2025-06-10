@@ -6,6 +6,7 @@ apt-get purge [paquete]	Desinstala un paquete y tambien elimina sus archivos de 
 apt-get clean	Borra los paquetes .deb descargados y cacheados en /var/cache/apt/archives/. Libera espacio.
 apt-cache search [texto]	Busca un paquete en la lista de paquetes disponibles.
 apt-cache depends [paquete]	Muestra las dependencias de un paquete.
+apt-get download [paquete]	Descarga un paquete sin instalarlo. Util para obtener el .deb.
 # dpkg
 > Gestor de paquetes de bajo nivel. Trabaja con archivos .deb locales. 
   * -i [archivo.deb]: Instala un paquete desde un archivo.

@@ -2,13 +2,13 @@ systemctl status [unidad]	Muestra el estado detallado de una unidad.
 systemctl start [unidad]	Inicia una unidad.
 systemctl stop [unidad]	Detiene una unidad.
 systemctl restart [unidad]	Reinicia una unidad.
-systemctl enable [unidad]	Habilita que una unidad se inicie automaticamente en el arranque.
+systemctl enable [unidad]	Habilita que una unidad se inicie automaticamente en el arranque del sistema.
 systemctl disable [unidad]	Deshabilita el inicio automatico de una unidad.
 systemctl is-active [unidad]	Comprueba si una unidad esta activa. Devuelve "active" o "inactive".
 systemctl list-units	Muestra todas las unidades activas. --type=[tipo]: Filtra por tipo (service, socket, etc.).
   * --all: Muestra todas las unidades, incluyendo las inactivas.
 journalctl	Consulta los registros (logs) del sistema gestionados por systemd. 
-  * -u [unidad]: Muestra logs de una unidad especifica.
+  * -u [unidad]: Muestra logs o registros de una unidad especifica.
   * -k: Muestra solo los mensajes del kernel. 
   * -n [numero]: Muestra las ultimas [numero] lineas.
   * -f: Muestra los logs en tiempo real.
