@@ -14,3 +14,9 @@ apt-get download [paquete]	Descarga un paquete sin instalarlo. Util para obtener
   * -I [archivo.deb]: Muestra informacion de un paquete .deb (version, etc.).
   * -L [paquete]: Lista los archivos instalados por un paquete.
   * -S [archivo]: Busca que paquete instalo un archivo especifico.
+  -i o --install: Palabra clave: "Instalar un archivo .deb". Comando: sudo dpkg -i <paquete.deb>.
+-l o --list: Palabra clave: "Listar paquetes instalados". Comando: dpkg -l. Puedes combinarlo con grep para buscar: dpkg -l | grep vlc.
+-r o --remove: Palabra clave: "Desinstalar un paquete". Comando: sudo dpkg -r <paquete>.
+-P o --purge: Palabra clave: "Desinstalar completamente". Comando: sudo dpkg -P <paquete>.
+-s o --status: Palabra clave: "Comprobar si un paquete está instalado". Comando: dpkg -s <paquete>.
+-L o --listfiles: Palabra clave: "Saber qué archivos instaló un paquete y dónde están". Comando: dpkg -L <paquete>.

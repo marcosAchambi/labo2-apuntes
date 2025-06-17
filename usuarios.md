@@ -28,6 +28,18 @@ chage -l [usuario] :: Muestra la información de expiración de la contraseña y
 chage -M [días] [usuario] :: Fija el número máximo de días que una contraseña es válida.
 chage -m [días] [usuario] :: Fija el número mínimo de días antes de poder cambiar una contraseña.
 chage -E [YYYY-MM-DD] [usuario] :: Fija la fecha de expiración de la cuenta de usuario.
+chage -d [YYYY-MM-DD] [usuario] :: Fija la fecha del último cambio de contraseña.
+chage -I [días] [usuario] :: Fija el número de días de inactividad antes de que la cuenta sea desactivada.
+chage -W [días] [usuario] :: Fija el número de días de aviso antes de que la contraseña expire.
+## Archivos de Configuración Importantes
+/etc/passwd :: Base de datos de usuarios del sistema. Contiene información como UID, GID, home y shell.
+/etc/shadow :: Base de datos de contraseñas. Contiene las contraseñas encriptadas y políticas de expiración de cuentas.
+/etc/group :: Base de datos de grupos del sistema. Contiene información sobre los grupos y sus miembros.
+/etc/gshadow :: Base de datos de grupos con contraseñas. Contiene contraseñas encriptadas para grupos y sus miembros.
+/etc/login.defs :: Archivo de configuración global para políticas de cuentas y contraseñas. Define valores por defecto como UID_MIN, GID_MIN, PASS_MAX_DAYS, etc.
+/etc/skel :: Directorio plantilla para nuevos usuarios. Contiene archivos y directorios que se copian al home de los nuevos usuarios.
+/etc/default/useradd :: Archivo de configuración global para el comando `useradd`. Define valores por defecto como HOME, SHELL, GROUP, etc.
+/etc/default/useradd :: Archivo de configuración global para el comando `useradd`. Define valores por defecto como HOME, SHELL, GROUP, etc.
 /etc/login.defs :: Archivo de configuración con valores por defecto para políticas de cuentas (PASS_MAX_DAYS, etc.).
 /etc/skel :: Directorio plantilla. Los archivos y directorios aquí se copian al home de los nuevos usuarios.
 
@@ -65,3 +77,5 @@ sudo usermod -d /opt/tester -m tester
 
 # Fijar que la contraseña de 'alexis' expire cada 30 días y que su cuenta se desactive el 2025-09-21
 sudo chage -M 30 -E 2025-09-21 alexis
+# Forzar a 'alexis' a cambiar su contraseña en el próximo inicio de sesión
+sudo chage -d 0 alexis
